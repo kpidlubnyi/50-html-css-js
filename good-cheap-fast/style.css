@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+h2 {
+    font-size: 36px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.toggler {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 350px;
+}
+
+label {
+    position: relative;
+    background-color: #d0d0d0;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 15px 0;
+    width: 120px;
+    height: 60px;
+    animation: colorOff 0.4s forwards;
+    box-shadow: inset 5px 5px 10px gray;
+}
+
+span {
+    font-size: 40px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.ball {
+    background: #fff;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    box-shadow: 3px 3px 3px gray;
+    align-items: center;
+    justify-content: center;
+    animation: slideOff 0.4s forwards;
+}
+
+input {
+    visibility: hidden;
+}
+
+input:checked + label {
+    animation: colorOn 0.4s forwards;
+}
+
+input:checked + label .ball {
+    animation: slideOn 0.4s forwards;
+}
+
+@keyframes slideOn {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(60px);
+        box-shadow: 3px 3px 3px darkgreen;
+    }
+}
+
+@keyframes slideOff {
+    0% {
+        transform: translateX(60px);
+        box-shadow: 3px 3px 3px darkgreen;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes colorOn {
+    0% {
+        background-color: lightgray;
+    }
+    100% {
+        background-color: limegreen;
+        box-shadow: inset 5px 5px 10px darkgreen;
+    }
+}
+
+@keyframes colorOff {
+    0% {
+        background-color: limegreen;
+        box-shadow: inset 5px 5px 10px darkgreen;
+    }
+    100% {
+        background-color: lightgray;
+    }
+}
