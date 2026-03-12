@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: peachpuff;
+    height: 100vh;
+}
+
+.auto-text-container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.auto-text {
+    font: bold 24pt Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.speed-handler-background {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 240px;
+    height: 60px;
+    background: lightsalmon;
+    border-radius: 50px;
+}
+
+.speed-input {
+    position: relative;
+    width: 160px;
+    height: 60px;
+}
+
+input {
+    position: absolute;
+    left: 9px;
+    top: 10px;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 24px;
+    text-align: center;
+    background: peachpuff;
+    z-index: 2;
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.submit-btn {
+    position: relative;
+    top: 10px;
+    left: 50px;
+    width: 50px;
+    height: 40px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    z-index: 1;
+    transition: transform .3s, background .3s, color .3s;
+}
+
+.submit-btn.visible {
+    transform: translateX(60px);
+    background: rgb(126,192,55);
+}
+
+.submit-btn.visible:hover {
+    background: rgb(106, 165, 42);
+    color: whitesmoke;
+}
+
+.submit-btn div {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 20px;
+}
+
+.speed-regulator {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 40px;
+}
+
+.speed-btn {
+    width: 40px;
+    height: 19px;
+    border: none;
+    font-size: 16px;
+    background: peachpuff;
+    transition: .3s;
+}
+
+.speed-up { border-radius: 20px 20px 2px 2px; }
+.speed-down { border-radius: 2px 2px 20px 20px; }
+
+.speed-btn:hover {
+    background: darksalmon;
+    color: peachpuff;
+}
