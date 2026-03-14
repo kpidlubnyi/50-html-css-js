@@ -1,0 +1,35 @@
+@keyframes popOut {
+  0%   { transform: scale(1); opacity: 1;}
+  50%  { transform: scale(0.9); opacity: 0.8;}
+  100% { transform: scale(3); opacity: 0;}
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.bg {
+    background: url('https://images.unsplash.com/photo-1576161787924-01bb08dad4a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2104&q=80')
+    no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+} 
+
+.loading-text {
+    font-size: 60pt;
+    color: antiquewhite;
+}
+
+.loading-text.done {
+    animation: popOut 0.45s ease forwards;
+}
